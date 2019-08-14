@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang=ja>
+  <head>
+    <meta charset="utf-8">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <header>
+      <div class="container-bar">
+        <div class="header-left">
+          <a href="index.html">Keitaro.HP</a>
+        </div>
+        <div class="header-right">
+          <ul>
+            <li><a href="#portfolio">自己紹介</a></li>
+            <li><a href="#hobby">趣味</a></li>
+            <li><a href="#sns">SNS</a></li>
+            <li><a href="#contact">問い合わせ</a></li>
+          </ul>
+
+        </div>
+      </div>
+      <div class="container-header">
+        <div class="header-mainTitle">
+          <h1>小栗圭太郎</h1>
+        </div>
+        <div class="header-img">
+          <img src="img/selfie.jpg">
+        </div>
+        <div class="header-txt">
+          <p><span>プログラミング</span>と</p><p><span>Webマーケティング</span>を駆使し、</p>
+          <p>自分個人の価値を高め、</p>
+          <p><span>会社のブランド</span>ではなく</p>
+          <p><span>小栗圭太郎</span>の名前で活躍できる</p>
+          <p>そんな未来を目指して</p>
+        </div>
+        
+      </div>
+    </header>
+    <main>
+      <div id="portfolio" class="container-main1">
+        <h1>小栗圭太郎　とは</h1>
+        <h2>気になることは全部手を出す</h2>
+        <p>1997年、大阪で生まれる</p>
+        <p>高校三年と浪人期間の19年間を名古屋で過ごす</p>
+        <p>大学で様々な社長に会い、自分の個人の力を高める事が大切だと考える</p>
+        <p>2019年6月、未来電子にインターンとして参加し、目に見えるスキルを手に入れるために格闘中</p>
+      </div>
+      <div id="hobby" class="container-main2">
+        <h3>小栗圭太郎の趣味</h3>
+        <ul  class="exaples">
+          <li>
+            <div class="example1">
+              <h4>Diving</h4>
+              <h5>高校二年の夏</h5>
+              <h5>フィリピンのセブ島で</h5>
+              <h5>ダイビングライセンスを取得</h5>
+              <div class="ex-txt">
+                <img src="img/diving.jpg" alt="">
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="example2">
+              <h4>Calligraphy</h4>
+              <h5>小学一年から高校三年まで</h5>
+              <h5>書道を習う</h5>
+              <h5>全国大会受賞経験あり</h5>
+              <div class="ex-txt">
+                <img src="img/Calligraphy.JPG" alt="">
+               </div>
+            </div>
+          </li>
+          <li>
+            <div class="example3">
+              <h4>Hitchhike</h4>
+              <h5>大学一回生の春休み</h5>
+              <h5>大阪から東京まで</h5>
+              <h5>ヒッチハイクをする</h5>    
+              <div class="ex-txt">
+                <img src="img/Hitchhike.jpg" alt="">
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="question">          
+          <div class="q-txt">
+            <div class="co"><p>こんな小栗圭太郎にご興味をもたれた方は<br>お気軽にご連絡ください！</br></p></div>
+            <div class="tr"><p><br>ぜひ一度お話しいただくチャンスを</br>僕にください！</p></div>
+            <div class="mail"><p><a href="#contact">お問い合わせ</a></p></div>
+          </div>
+
+        </div>
+      </div>
+      <div class="reg2" id="contact">
+        <h2>お問い合わせ</h2>
+        <form action="mailto:8keitaro8g@gmail.com" enctype="text/plain" name="mail">
+            メールアドレス  <input type="text" size="20"name="アドレス"><br>
+            お名前  <input type="text" size="20" name="送信者"><br>
+            <label for="comment">コメント  </label>
+            <textarea id="comment" name="comment"></textarea>
+            <br><input type="submit" value="送信">
+            <input type="reset" name="mail" value="リセット">
+        </form>
+      </div>
+      <div id="sns" class="facebook">
+        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fkeitaro.oguri%2Fposts%2F142528133224809&width=500" width="500" height="650" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+      </div>
+        <div id="countdown" class="countdown">
+          </div>
+          <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+          <script>
+          function countdowntimer(){
+           var countdown = setTimeout(function(){
+            var today = new Date();
+            var targetDay = new Date('2021/04/01 00:00:00');
+            var daysBetween = Math.ceil((targetDay - today) / (24*60*60*1000));
+            var remainDay = (targetDay - today);
+            if (remainDay >= 0){
+             var h = Math.floor(remainDay / 3600000);
+             var h1 = h % 24;
+             var m = Math.floor((remainDay - h * 3600000) / 60000);
+             var s = Math.round((remainDay - h * 3600000 - m * 60000) / 1000);
+             $("#countdown").text("社会人まで"+ daysBetween + "日と" + h1 + "時間" + m + "分" +s + "秒です。");         if ((h == 0) && (m == 0) && (s == 0)) {//指定の日時が来たら、
+               clearTimeout(countdown);
+               $("#countdown").text("社会に出る時間です。覚悟はいいですか？");
+               }
+             }else{
+               $("#countdown").text("社会人として活躍中です。");
+             }
+           }, 1000);
+          }
+       
+          countdowntimer();
+       
+          </script>
+          <div class='lottery'>
+            <div id='btn'>Lottery</div>
+            <script src="js/main.js"></script>
+          </div>
+
+
+      <div class="fo">
+        <p>&reg;2019 Keitaro Oguri</p>
+      </div>
+    </main>
+  </body>
+</html>
